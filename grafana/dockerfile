@@ -22,7 +22,7 @@ ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
 #COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
 
 ###### Customization ########################################
-USER root
+# USER root
 
 # Replace Favicon
 # COPY img/fav32.png /usr/share/grafana/public/img
@@ -31,8 +31,8 @@ USER root
 # COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 
 # Background
-COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
-COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
+# COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
+# COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 
 # Update Javascript
 # RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|"AppTitle","Grafana")|"AppTitle","Balena Application")|g' {} \;
@@ -45,7 +45,7 @@ COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 
 #############################################################
 
-USER grafana
+# USER grafana
 
 # Entrypoint
-ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
+# ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
