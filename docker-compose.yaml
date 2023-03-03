@@ -13,7 +13,7 @@ services:
       - edge
   grafana:
     build: ./grafana
-    image: localbuild/grafana/grafana:latest
+    image: localbuild/grafana/grafana:9.3.2
     container_name: grafana
     restart: always #unless-stopped
     environment:
