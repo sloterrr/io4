@@ -8,7 +8,7 @@ services:
     ports: 
       - "1880:1880"
     volumes:
-      - noderedData:/data
+      - nodered-data:/data
     networks:
       - edge
   grafana:
@@ -23,7 +23,7 @@ services:
     ports:
       - "3000:3000"
     volumes: 
-      - grafanaData:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
     networks:
       - edge
   influxdb:
@@ -43,7 +43,7 @@ services:
       - "8086:8086"
       - "8089:8089"
     volumes:
-      - influxData:/var/lib/influxdb
+      - influx-data:/var/lib/influxdb
     networks: 
       - edge
   mosquitto:
