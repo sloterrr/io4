@@ -4,7 +4,7 @@ services:
     build: ./nodered
     image: localbuild/nodered:latest
     container_name: nodered
-    restart: always #unless-stopped
+    restart: unless-stopped #unless-stopped
     ports: 
       - "1880:1880"
     volumes:
@@ -15,8 +15,9 @@ services:
     build: ./grafana
     image: localbuild/grafana/grafana:latest
     container_name: grafana
-    restart: always #unless-stopped
+    restart: unless-stopped #unless-stopped
     environment:
+    
       - GF_SECURITY_ADMIN_USER = admin
       - GF_SECURITY_ADMIN_PASSWORD = admin
       - GF_INSTALL_PLUGINS=
@@ -30,7 +31,7 @@ services:
     build: ./influx
     image: localbuild/influxdb:2.6
     container_name: influxdb
-    restart: always #unless-stopped
+    restart: unless-stopped #unless-stopped
     environment:
       INFLUXDB_DB: HAPE
       INFLUXDB_HTTP_AUTH_ENABLED: "false"
