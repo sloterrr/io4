@@ -16,7 +16,7 @@ ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
 
 # Copy artifacts
 # COPY --chown=grafana:root dist /app
-# COPY entrypoint.sh /
+# COPY entrypoint.sh /noide 
 
 # Provisioning
 #COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
