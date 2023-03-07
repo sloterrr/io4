@@ -24,15 +24,12 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 6,
   "links": [],
   "liveNow": true,
   "panels": [
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3vb-Nk1Vk"
-      },
+      "datasource": {},
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -107,7 +104,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.3.6",
+      "pluginVersion": "9.3.2",
       "targets": [
         {
           "datasource": {
@@ -154,10 +151,7 @@
       "type": "cloudspout-button-panel"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3vb-Nk1Vk"
-      },
+      "datasource": {},
       "description": "Błędy w trzech rejestrach",
       "fieldConfig": {
         "defaults": {
@@ -209,7 +203,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.6",
+      "pluginVersion": "9.3.2",
       "targets": [
         {
           "datasource": {
@@ -225,10 +219,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3vb-Nk1Vk"
-      },
+      "datasource": {},
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -325,10 +316,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3vb-Nk1Vk"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -384,7 +372,7 @@
           }
         ]
       },
-      "pluginVersion": "9.3.6",
+      "pluginVersion": "9.3.2",
       "targets": [
         {
           "datasource": {
@@ -445,13 +433,13 @@
     "list": []
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "hape-pompa-andrzej1",
-  "uid": "vf4rmW1Vk",
-  "version": 20,
+  "title": "andrzej",
+  "uid": "X6HPeRa4z",
+  "version": 1,
   "weekStart": ""
 }
