@@ -25,11 +25,11 @@ ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
 # USER root
 
 # Replace Favicon
-COPY /home/debian/io4/img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-COPY /home/debian/io4/img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY /img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 # COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
 
 # Background
