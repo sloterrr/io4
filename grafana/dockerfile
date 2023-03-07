@@ -3,16 +3,16 @@
 FROM grafana/grafana:9.3.2
 
 # Set Grafana options
-#ENV GF_ENABLE_GZIP=true
-#ENV GF_USERS_DEFAULT_THEME=light
-#ENV GF_FEATURE_TOGGLES_ENABLE=topnav
+ENV GF_ENABLE_GZIP=true
+ENV GF_USERS_DEFAULT_THEME=light
+ENV GF_FEATURE_TOGGLES_ENABLE=topnav
 
 # Home Dashboard
-# ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/supervisor.json
+ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/supervisor.json
 
 # Paths
-#ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
-#ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
+ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
+ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
 
 # Copy artifacts
 # COPY --chown=grafana:root dist /app
@@ -25,11 +25,11 @@ FROM grafana/grafana:9.3.2
 # USER root
 
 # Replace Favicon
-# COPY img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-# COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 # COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
 
 # Background
