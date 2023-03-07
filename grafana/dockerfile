@@ -25,11 +25,11 @@ ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
 # USER root
 
 # Replace Favicon
-COPY img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY img/fav32.png /var/lib/docker/overlay2/e5f3cc5962e942d14416cc50f310b3431c2f9e38b1fc6ddc10e879f43bec3f85/diff/usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY img/logo.svg /var/lib/docker/overlay2/e5f3cc5962e942d14416cc50f310b3431c2f9e38b1fc6ddc10e879f43bec3f85/diff/usr/share/grafana/public/img/grafana_icon.svg
 # COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
 
 # Background
