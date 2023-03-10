@@ -31,6 +31,7 @@ COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 
 # Replace Logo
 COPY /img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY /img/grafana.svg /usr/share/grafana/public/img/icons/mono/grafana.svg
 # COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
 
 # Background
