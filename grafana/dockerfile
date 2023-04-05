@@ -30,7 +30,7 @@ ENV GF_PATHS_PLUGINS="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06
 # USER root
 
 # Replace Faviconpu
-COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
+#COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
