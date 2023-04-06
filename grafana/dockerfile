@@ -34,7 +34,7 @@ ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 USER root
 
 # Replace Faviconpu
-#COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
