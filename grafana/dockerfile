@@ -10,14 +10,18 @@ ENV GF_FEATURE_TOGGLES_ENABLE=topnav
 # Home Dashboard
 #COPY /supervisor.json /var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning/dashboards/supervisor.json
 #COPY /supervisor.json /etc/grafana/provisioning/dashboards/supervisor.json
-#ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/supervisor.json
-ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning/dashboards/supervisor.json
+ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/supervisor.json
+#ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning/dashboards/supervisor.json
 COPY /supervisor.json $GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH
 
+
+
+
 # Paths
-ENV GF_PATHS_PROVISIONING="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning"
-#ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
-ENV GF_PATHS_PLUGINS="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/var/lib/grafana/plugins"
+#ENV GF_PATHS_PROVISIONING="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning"
+ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
+ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
+#ENV GF_PATHS_PLUGINS="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/var/lib/grafana/plugins"
 
 # Copy artifacts
 # COPY --chown=grafana:root dist /app
