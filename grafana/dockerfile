@@ -34,14 +34,15 @@ COPY /supervisor.json $GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH
 #ENV GF_PATHS_PROVISIONING="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning"
 ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 ENV GF_PATHS_PLUGINS="/var/lib/grafana/plugins"
+ENV GF_PATHS_IMG="/usr/share/grafana/public/img"
 #ENV GF_PATHS_PLUGINS="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/var/lib/grafana/plugins"
 
 # Copy artifacts
- COPY --chown=grafana:root dist /app
- COPY entrypoint.sh / 
+ #COPY --chown=grafana:root dist /app
+ #COPY entrypoint.sh / 
 
 # Provisioning
-COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
+#COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
 
 ###### Customization ########################################
 USER root
@@ -51,9 +52,9 @@ USER root
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
-COPY img/grafana.svg /usr/share/grafana/public/img/icons/mono/grafana.svg
-COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY img/logo.svg &GF_PATHS_IMG/grafana_icon.svg
+COPY img/grafana.svg &GF_PATHS_IMG/icons/mono/grafana.svg
+COPY img/logo.svg &GF_PATHS_IMG/grafana_icon.svg
 
 # Background
 # COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
