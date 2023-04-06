@@ -48,12 +48,12 @@ ENV GF_PATHS_IMG="/usr/share/grafana/public/img"
 USER root
 
 # Replace Faviconpu
-# COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-COPY /localbuild/grafana/img/grafana.svg &GF_PATHS_IMG/icons/mono/grafana.svg
-COPY /localbuild/grafana/logo.svg &GF_PATHS_IMG/grafana_icon.svg
+COPY /img/grafana.svg &GF_PATHS_IMG/icons/mono/grafana.svg
+COPY /img/logo.svg &GF_PATHS_IMG/grafana_icon.svg
 
 # Background
 # COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
