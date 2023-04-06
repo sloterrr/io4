@@ -8,18 +8,18 @@ ENV GF_USERS_DEFAULT_THEME=light
 ENV GF_FEATURE_TOGGLES_ENABLE=topnav,newPanelChromeUI
 
 ## Enable Anonymous Authentication
-ENV GF_AUTH_ANONYMOUS_ENABLED=true
-ENV GF_AUTH_BASIC_ENABLED=false
+#ENV GF_AUTH_ANONYMOUS_ENABLED=true
+#ENV GF_AUTH_BASIC_ENABLED=false
 
 ## Disable Sanitize
-ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
+#ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
 
 ## Disable Explore
-ENV GF_EXPLORE_ENABLED=false
+#ENV GF_EXPLORE_ENABLED=false
 
 ## Disable Alerting
-ENV GF_ALERTING_ENABLED=false
-ENV GF_UNIFIED_ALERTING_ENABLED=false
+#ENV GF_ALERTING_ENABLED=false
+#ENV GF_UNIFIED_ALERTING_ENABLED=false
 
 # Home Dashboard
 #COPY /supervisor.json /var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning/dashboards/supervisor.json
