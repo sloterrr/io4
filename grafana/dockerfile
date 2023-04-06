@@ -31,16 +31,16 @@ ENV GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 #COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
 
 ###### Customization ########################################
-# USER root
+USER root
 
 # Replace Faviconpu
-#COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
+COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
 # COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 # Replace Logo
-#COPY /img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
-#COPY /img/grafana.svg /usr/share/grafana/public/img/icons/mono/grafana.svg
-# COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
+COPY /img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+COPY /img/grafana.svg /usr/share/grafana/public/img/icons/mono/grafana.svg
+#COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svgdir
 
 # Background
 # COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
