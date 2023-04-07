@@ -48,7 +48,7 @@ a.createElement(at.h,{name:"bars",tooltip:"Toggle menu",tooltipPlacement:"bottom
 
 doklejka css
 
-.page-toolbar.css-1ne6ysz{display:none !important},panel-title{display:none !important}.submenu-controls{ display:none !important}.css-1opalb8{display: none !important}.css-nqsyso{display:none !important}.sidemenu{display:none !important}.react-resizable-handle{display:none !Important}
+.css-13883cc{display:none !important} .panel-title{display:none !important}.submenu-controls{display:none !important}.css-1opalb8{display: none !important}.css-nqsyso{display:none !important}.sidemenu{display:none !important}.react-resizable-handle{display:none !important}.css-ta03ya:nth-child(0){display:none !Important}.css-ta03ya:nth-child(1){display:none !important}.css-ta03ya:nth-child(2){display:none !important}
 
 
 "css-1ne6ysz"
@@ -56,7 +56,29 @@ css-1hik5m6
 
 css-1ne6ysz
 
+.css-ta03ya:nth-child(0){visibility:hide !Important}.css-ta03ya:nth-child(1){visibility:hide !Important}
 
 <div class="css-ta03ya" style="order: 0; visibility: visible;">
 <div class="css-ta03ya" style="order: 0; visibility: hide;">
+
+href: "https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
+
+href: "https://hape-heatpumps.eu"
+
+
+
+
+RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|(href: "https://grafana.com/docs/grafana/latest/dashboards/time-range-controls")|(href: "https://hape-heatpumps.eu")|g' {} \;
+
+
+
+##css modificator
+
+
+RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|(.submenu-controls{display:none}@media(max-width:768px){nav.page-toolbar--fullscreen{padding-left:16px}})|(.submenu-controls{display:none}@media(max-width:768px){nav.page-toolbar--fullscreen{padding-left:16px}}.css-13883cc{display:none !important} .panel-title{display:none !important}.submenu-controls{display:none !important}.css-1opalb8{display: none !important}.css-nqsyso{display:none !important}.sidemenu{display:none !important}.react-resizable-handle{display:none !important}.css-ta03ya:nth-child(0){display:none !Important}.css-ta03ya:nth-child(1){display:none !important}.css-ta03ya:nth-child(2){display:none !important})|g' {} \;
+
+
+
+
+
 
