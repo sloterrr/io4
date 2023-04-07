@@ -16,9 +16,9 @@ services:
     image: localbuild/grafana/grafana:9.4.3
     container_name: grafana
     restart: always #unless-stopped
-   # environment:
-     # - GF_SECURITY_ADMIN_USER = admin
-     # - GF_SECURITY_ADMIN_PASSWORD = password
+    environment:
+      - GF_SECURITY_ADMIN_USER = admin
+      - GF_SECURITY_ADMIN_PASSWORD = admin
     ports:
       - "3000:3000"
     volumes: 
