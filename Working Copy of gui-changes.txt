@@ -1,0 +1,73 @@
+
+grafana.dark.2336ef52b5298cb04209.css
+
+background-color:#181b1f
+
+background-color: #ffffff00
+
+
+
+grep -R "background-color:#181b1f" /usr/share/grafana
+
+grep -H -r "background-color:#181b1f" /usr/share/grafana
+
+RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|("nav.search.placeholder","Search Grafana")|("nav.search.placeholder","Search")|g' {} \;
+
+
+
+find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|("nav.search.placeholder","Search")
+
+
+
+css-13883cc
+
+
+navbar menu:
+"navbarmenu"
+
+
+
+onClick:()=>{(0,Dr.ff)("grafana_navigation_expanded"),ve(!0)}
+onClick:()=>{}
+
+
+
+
+RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|((onClick:()=>{(0,Dr.ff)("grafana_navigation_expanded"),ve(!0)})|(onClick:()=>{}))|g' {} \;
+
+(onClick:()=>{(0,Dr.ff)("grafana_navigation_expanded"),ve(!0)})|(onClick:()=>{})
+
+
+
+a.createElement(at.h,{name:"bars",tooltip:"Toggle menu",tooltipPlacement:"bottom",size:"xl",onClick:le})),a.createElement(Cu,{breadcrumbs:ut,className:tt.breadcrumbs}),
+
+
+,a.createElement(at.h,{name:"bars",tooltip:"Toggle menu",tooltipPlacement:"bottom",size:"xl",onClick:()=>ve(!le)}))
+
+
+
+doklejka css
+
+.css-13883cc{display:none !important} .panel-title{display:none !important}.submenu-controls{display:none !important}.css-1opalb8{display: none !important}.css-nqsyso{display:none !important}.sidemenu{display:none !important}.react-resizable-handle{display:none !important}.css-ta03ya:nth-child(0){display:none !Important}.css-ta03ya:nth-child(1){display:none !important}.css-ta03ya:nth-child(2){display:none !important}
+
+
+"css-1ne6ysz"
+css-1hik5m6
+
+css-1ne6ysz
+
+.css-ta03ya:nth-child(0){visibility:hide !Important}.css-ta03ya:nth-child(1){visibility:hide !Important}
+
+<div class="css-ta03ya" style="order: 0; visibility: visible;">
+<div class="css-ta03ya" style="order: 0; visibility: hide;">
+
+href: "https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
+
+href: "https://hape-heatpumps.eu"
+
+
+
+
+RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|(href: "https://grafana.com/docs/grafana/latest/dashboards/time-range-controls")|(href: "https://hape-heatpumps.eu")|g' {} \;
+
+
