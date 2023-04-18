@@ -31,7 +31,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -95,7 +95,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg0\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -120,7 +120,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -814,7 +814,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg0\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -826,7 +826,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -920,7 +920,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg1\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -932,7 +932,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -1013,7 +1013,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "hide": false,
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"T1_Out\" or r[\"_field\"] == \"T4_AirReturn\" or r[\"_field\"] == \"T6_EconIn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
@@ -1039,7 +1039,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -1123,7 +1123,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"T1_Out\" or r[\"_field\"] == \"T6_EconIn\" or r[\"_field\"] == \"T2_CoilOut\" or r[\"_field\"] == \"T3_HeatExch\" or r[\"_field\"] == \"T4_AirReturn\" or r[\"_field\"] == \"T5_AirExt\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -1148,7 +1148,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -1232,7 +1232,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "  from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"acv\" or r[\"_field\"] == \"acc\")\r\n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\r\n  |> map(fn: (r) => ({ r with _value: r.acv * r.acc }))\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -1244,7 +1244,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -1328,7 +1328,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"acc\" or r[\"_field\"] == \"compc\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -1353,7 +1353,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -1417,7 +1417,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg2\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -1429,7 +1429,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -1803,7 +1803,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg3\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -1815,7 +1815,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -3144,7 +3144,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"reg4\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -3169,7 +3169,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -3253,7 +3253,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "hide": false,
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"auto_temp_co\" or r[\"_field\"] == \"auto_temp_cwu\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
@@ -3279,7 +3279,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "description": "",
       "fieldConfig": {
@@ -3331,7 +3331,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "hide": false,
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"time_co\" or r[\"_field\"] == \"time_cwu\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
@@ -3354,7 +3354,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "description": "",
           "fieldConfig": {
@@ -3437,7 +3437,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "hide": false,
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"manual_temp_co\" or r[\"_field\"] == \"manual_temp_cwu\" or r[\"_field\"] == \"temp_frzn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
@@ -3464,7 +3464,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "description": "sensory temperatury w pompie",
           "fieldConfig": {
@@ -3548,7 +3548,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "hide": false,
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"T1_Out\" or r[\"_field\"] == \"T2_CoilOut\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"start\")",
@@ -3575,7 +3575,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "description": "sensory temperatury w pompie",
           "fieldConfig": {
@@ -3659,7 +3659,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "hide": false,
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"T3_HeatExch\" or r[\"_field\"] == \"T4_AirReturn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
@@ -3686,7 +3686,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "description": "",
           "fieldConfig": {
@@ -3770,7 +3770,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "hide": false,
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"T5_AirExt\" or r[\"_field\"] == \"T6_EconIn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
@@ -3800,7 +3800,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -3874,7 +3874,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"acv\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -3886,7 +3886,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -3934,7 +3934,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"acc\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -3946,7 +3946,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -3994,7 +3994,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"compc\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -4019,7 +4019,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -4067,7 +4067,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"lpres\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -4079,7 +4079,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -4127,7 +4127,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"hpres\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -4139,7 +4139,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -4187,7 +4187,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"eev\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -4199,7 +4199,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -4247,7 +4247,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"evi\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
           "refId": "A"
@@ -4272,7 +4272,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -4337,7 +4337,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "hide": false,
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"Hi_Ta\" or r[\"_field\"] == \"Hi_Ts\" or r[\"_field\"] == \"Lo_Ta\" or r[\"_field\"] == \"Lo_Ts\" or r[\"_field\"] == \"wspK\" or r[\"_field\"] == \"offset\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")\r\n",
@@ -4397,7 +4397,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "fieldConfig": {
             "defaults": {
@@ -5090,7 +5090,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"Err1\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
               "refId": "A"
@@ -5102,7 +5102,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "fieldConfig": {
             "defaults": {
@@ -5795,7 +5795,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"Err2\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
               "refId": "A"
@@ -5807,7 +5807,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "fieldConfig": {
             "defaults": {
@@ -7140,7 +7140,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"Err3\" )\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
               "refId": "A"
@@ -7152,7 +7152,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "description": "",
           "fieldConfig": {
@@ -7201,7 +7201,7 @@
             {
               "datasource": {
                 "type": "influxdb",
-                "uid": "cOtJsdq-Vz"
+                "uid": "cOtJlR-Vz"
               },
               "hide": false,
               "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"Err1\" or r[\"_field\"] == \"Err2\" or r[\"_field\"] == \"Err3\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"last\")",
@@ -7231,7 +7231,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "cOtJsdq-Vz"
+        "uid": "cOtJlR-Vz"
       },
       "fieldConfig": {
         "defaults": {
@@ -7296,7 +7296,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "cOtJsdq-Vz"
+            "uid": "cOtJlR-Vz"
           },
           "query": "from(bucket: \"hape\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"andr_n00001\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"version\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\r\n  |> yield(name: \"lat\")",
           "refId": "A"
@@ -7334,8 +7334,8 @@
     ]
   },
   "timezone": "browser",
-  "title": "andrej_no1",
-  "uid": "X6HPeRdsd232",
+  "title": "andrejos_no1",
+  "uid": "x666x666",
   "version": 19,
   "weekStart": ""
 }
