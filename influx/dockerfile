@@ -1,1 +1,3 @@
-FROM influxdb:latest
+FROM influxdb:influxdb:2.6
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "vim"]
