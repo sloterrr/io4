@@ -91,6 +91,8 @@ RUN find /usr/share/grafana/public/build/ -name *.css -exec sed -i 's|.submenu-c
 
 docker exec -it grafana bash
 find -name "grafana"
+find / -type f -name '*.ini'
+
 
 find /usr/share/grafana/public/build/ -name "*.java" -exec sed -i "s/foo/bar/g" {} +
 
