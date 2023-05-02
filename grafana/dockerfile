@@ -29,6 +29,10 @@ ENV GF_FEATURE_TOGGLES_ENABLE=topnav
 #COPY /supervisor.json $GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH
 
 
+ENV GF_PATHS_CONFIG="/etc/grafana/grafana.ini"
+ENV GF_PATHS_DATA="/var/lib/grafana"
+ENV GF_PATHS_HOME="/usr/share/grafana"
+ENV GF_PATHS_LOGS="/var/log/grafana"
 
 # Paths
 #ENV GF_PATHS_PROVISIONING="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/etc/grafana/provisioning"
