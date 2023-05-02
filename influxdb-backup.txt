@@ -38,3 +38,6 @@ The configuration file is located at /usr/local/etc/influxd.
 
 sudo find / -type f -name '*.db'
 find / -type f -name '*.ini'
+
+
+
