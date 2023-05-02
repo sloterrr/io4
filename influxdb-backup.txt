@@ -24,8 +24,17 @@ So what we are waiting for?? Lest try to restore it!!!
 
 
 INLFUX CLI
-docker exec -it influxdb /bin/bash
+docker exec -it influxdb
 
 
 
 docker exec -it addon_a0d7b954_influxdb influx -username myuser -password mypassword
+
+
+docker exec -it grafana bash
+
+
+The configuration file is located at /usr/local/etc/influxd.
+
+sudo find / -type f -name '*.db'
+find / -type f -name '*.ini'
