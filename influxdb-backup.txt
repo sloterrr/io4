@@ -3,6 +3,15 @@ docker ps
 CONTAINER ID:
 f3b50c005d21 
 
+influxdb:2.7.1 
+bbf5568f85b9
+
+backup folder:
+home/debian/backup
+
+influx CLI
+docker exec -it influxdb bash
+
 backup sintase:
 3
 docker exec -it <container_id> influxd backup -portable -db <dbName> <folder-to-save-backup>
