@@ -11,6 +11,7 @@ home/debian/backup
 
 influx CLI
 docker exec -it influxdb bash
+influx v1 shell
 
 backup sintase:
 3
