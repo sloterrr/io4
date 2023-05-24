@@ -24,7 +24,7 @@ services:
       - GF_SMTP_SKIP_VERITY=true
       - GF_SMTP_HOST=smtp.gmail.com:465  
       - GF_SMTP_USER=suesinnovation@gmail.com
-      - GF_SMTP_PASSWORD=admin123123
+      - GF_SMTP_PASSWORD=sues123123
       - GF_SMTP_FROM_ADDRESS=suesinnovation@gmail.com
       - GF_SERVER_DOMAIN=grafana.server.name
       - GF_SERVER_ROOT_URL=http://grafana.server.name
