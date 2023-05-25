@@ -1,1 +1,1 @@
-FROM eclipse-mosquitto:latest
+FROM telegraf:1.26.3
