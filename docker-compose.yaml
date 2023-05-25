@@ -11,7 +11,7 @@ services:
       #- "8092:8092/udp"
       #- "8094:8094" "
     volumes:
-      - telegrafData:/telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     depends_on:
       - influxdb
     networks: 
@@ -91,7 +91,6 @@ networks:
 
 #Create Volumes for persistent Storage
 volumes:
-  telegrafData:
   noderedData:
   grafanaData:
   influxData:
