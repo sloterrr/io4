@@ -10,8 +10,9 @@ services:
       - "8125:8125"
       #- "8092:8092/udp"
       #- "8094:8094" "
-   # volumes:
+    volumes:
    #   - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.soc
     depends_on:
       - influxdb
     networks: 
