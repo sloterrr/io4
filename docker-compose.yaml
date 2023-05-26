@@ -1,23 +1,5 @@
 version: "3.0"
 services:
-  telegraf:
-    build: ./telegraf
-    image: localbuild/telegraf:1.26.3
-    container_name: telegraf
-    restart: unless-stopped
-    #environment:
-    ports:
-      - "8125:8125"
-      #- "8092:8092/udp"
-      #- "8094:8094" "
-    volumes:
-   #   - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    depends_on:
-      - influxdb
-    networks: 
-      - edge
-
   nodered: 
     build: ./nodered
     image: localbuild/nodered:latest
@@ -29,6 +11,7 @@ services:
       - noderedData:/data
     networks:
       - edge
+
   grafana:
     build: ./grafana
     image: localbuild/grafana/grafana:9.5.1
@@ -46,13 +29,13 @@ services:
       - GF_SMTP_FROM_ADDRESS=suesinnovation@gmail.com
       - GF_SERVER_DOMAIN=grafana.server.name
       - GF_SERVER_PORT=80
- 
     ports:
       - "3000:3000"
     volumes: 
       - grafanaData:/var/lib/grafana
     networks:
       - edge
+
   influxdb:
     build: ./influx
     image: localbuild/influxdb:2.7.1
@@ -73,6 +56,24 @@ services:
       - influxData:/var/lib/influxdb
     networks: 
       - edge
+
+  telegraf:
+    build: ./telegraf
+    image: localbuild/telegraf:1.26.3
+    depends_on:
+      - influxdb
+    container_name: telegraf
+    restart: unless-stopped
+    #environment:
+    ports:
+      - "8125:8125"
+      - "8092:8092/udp"
+      - "8094:8094/udp"
+    volumes:
+      - ./telegraf/mytelegraf.conf:/etc/telegraf/telegraf.conf:ro
+    networks: 
+      - edge
+ 
   mosquitto:
     build: ./mosquitto
     image: localbuild/mosquitto:latest
