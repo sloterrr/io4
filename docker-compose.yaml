@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3"
 services:
   nodered: 
     build: ./nodered
@@ -56,6 +56,7 @@ services:
       - influxData:/var/lib/influxdb
     networks: 
       - edge
+    
 
   telegraf:
     build: ./telegraf
@@ -63,12 +64,8 @@ services:
     depends_on:
       - influxdb
     container_name: telegraf
-    restart: unless-stopped
+    #restart: unless-stopped
     #environment:
-    ports:
-      - "8125:8125"
-      - "8092:8092/udp"
-      - "8094:8094/udp"
     volumes:
       - ./telegraf/mytelegraf.conf:/etc/telegraf/telegraf.conf:ro
     networks: 
