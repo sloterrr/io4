@@ -39,7 +39,7 @@ services:
   influxdb:
     build: ./influx
     image: localbuild/influxdb:2.7.1
-    container_name: influxdb
+    container_name: influxdb2
     restart: unless-stopped
     environment:
       INFLUXDB_DB: HAPE
@@ -53,7 +53,7 @@ services:
       - "8086:8086"
       - "8089:8089"
     volumes:
-      - influxData:/var/lib/influxdb
+      - influxData:/var/lib/influxdb2
     networks: 
       - edge
     
