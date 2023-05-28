@@ -1,6 +1,6 @@
 FROM telegraf:1.26.3
 
-ENV TELE_CONF_PATH="/etc/grafana/provisioning"
+ENV TELE_CONF_PATH="/etc/telegraf/telegraf.conf"
 #ENV GF_PATHS_PLUGINS="/var/lib/docker/overlay2/e5011136a41996896eb77e31995609e06cd1c7248b68ad6245b79bf84b09ac93/merged/var/lib/grafana/plugins"
 
 # Copy artifacts
@@ -9,13 +9,8 @@ ENV TELE_CONF_PATH="/etc/grafana/provisioning"
 
 # Provisioning
 #COPY --chown=grafana:root provisioning $GF_PATHS_PROVISIONING
-
 ###### Customization ########################################
 USER root
 
 # Replace Faviconpu
-COPY /img/fav32.png /usr/share/grafana/public/img/fav32.png
-# COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
-
-# Replace Logo
-COPY /img/grafana.svg /usr/share/grafana/public/img/grafana.svg
+COPY /home/debian/telegraf/telegraf.conf TELE_CONF_PATH
