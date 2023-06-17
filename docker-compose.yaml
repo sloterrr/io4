@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.6"
 services:
   influxdb:
     build: ./influx
@@ -27,7 +27,7 @@ services:
     build: ./telegraf
     image: localbuild/telegraf:1.26.3
     depends_on:
-      - influxdb
+      - influx
     container_name: SUES_telegraf
     #restart: unless-stopped
     #environment:
@@ -72,7 +72,7 @@ services:
     restart: unless-stopped #always
     environment:
       - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_SMTP_ENABLED=true
       - GF_SMTP_SKIP_VERITY=true
