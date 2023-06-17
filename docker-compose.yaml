@@ -27,7 +27,7 @@ services:
     build: ./telegraf
     image: localbuild/telegraf:1.26.3
     depends_on:
-      - influx
+      - influxdb
     container_name: SUES_telegraf
     #restart: unless-stopped
     #environment:
