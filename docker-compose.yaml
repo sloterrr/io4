@@ -18,7 +18,7 @@ services:
       - 8089:8089
     volumes:
       - influxData:/var/lib/influxdb2
-      -./influx/influx-configs:/etc/telegraf/telegraf.conf
+      - ./influx/influx-configs:/etc/influxdb2/influx-configs
     env_file:
       - .env
     networks: 
