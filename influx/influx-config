@@ -1,5 +1,0 @@
-[default]
-  url = [ "$INFLUX_URL" ]
-  token = "$INFLUX_TOKEN"
-  org = "hape"
-  active = true
