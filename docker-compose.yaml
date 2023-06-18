@@ -29,17 +29,17 @@ services:
     depends_on:
       - influxdb
     container_name: SUES_telegraf
-    #restart: unless-stopped
-    #environment:
     links:
       - influxdb
+    #restart: unless-stopped
+    #environment:
     volumes:
-      - "./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
-      #- "/var/run/docker.sock:/var/run/docker.sock"
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+      #- /var/run/docker.sock:/var/run/docker.sock"
     env_file:
       - .env
     networks: 
-      - SUES_net
+     - SUES_net
  
   mosquitto:
     build: ./mosquitto
