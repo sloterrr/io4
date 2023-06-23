@@ -9,7 +9,7 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - ./influxdb-1:/var/lib/influxdb2
+      - influxData:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
@@ -19,12 +19,12 @@ services:
     image: influxdb:2.7.1
     container_name: SUES_influxdb2
     environment:
-      - INFLUXDB_HTTP_BIND_ADDRESS=:8087
+      - INFLUXDB_HTTP_BIND_ADDRESS=:8086
       - INFLUXDB_DB=HAPE
     ports:
-      - 8087:8087
+      - 8087:8086
     volumes:
-      - ./influxdb-2:/var/lib/influxdb2
+      - influxData:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
