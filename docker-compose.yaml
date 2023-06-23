@@ -9,7 +9,7 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - influxData:/var/lib/influxdb2
+      - influxData1:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
@@ -24,7 +24,7 @@ services:
     ports:
       - 8087:8086
     volumes:
-      - influxData:/var/lib/influxdb2
+      - influxData2:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
@@ -107,6 +107,7 @@ networks:
 volumes:
   noderedData:
   grafanaData:
-  influxData:
+  influxData1:
+  influxData2:
   mosquittoLog:
   mosquittoData:
