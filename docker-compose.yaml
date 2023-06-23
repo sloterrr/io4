@@ -9,7 +9,7 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - influxData:/var/lib/influxdb
+      - ./influxdb-1:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
@@ -24,7 +24,7 @@ services:
     ports:
       - 8087:8086
     volumes:
-      - influxData:/var/lib/influxdb
+      - ./influxdb-2:/var/lib/influxdb2
     env_file:
       - .env
     networks: 
