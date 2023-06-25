@@ -12,40 +12,21 @@ services:
       - INFLUXDB_DB=HAPE
     ports:
       - 8086:8086
-    volumes:
-      - influxData1:/var/lib/influxdb2
-    env_file:
-      - .env
-    networks: 
-      - SUES_net
-
-  influxdb-2:
-    image: influxdb:2.7.1
-    container_name: SUES_influxdb2
-    environment:
-      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN="$MAIN_TOKEN2"
-      - INFLUX_TOKEN="$MAIN_TOKEN2"
-      - DOCKER_INFLUXDB_INIT_PORT=8087
-      - DOCKER_INFLUXDB_INIT_HOST=localhost
-      - INFLUXDB_HTTP_BIND_ADDRESS=:8086
-      - INFLUXDB_DB=HAPE
-    ports:
       - 8087:8086
     volumes:
-      - influxData2:/var/lib/influxdb2
+      - influxData1v:/var/lib/influxdb2:rw,z
+      - influxData1c:/etc/influxdb:rw,z
     env_file:
       - .env
     networks: 
       - SUES_net
       
-  telegraf-2:
-    build: ./telegraf-2
+  telegraf-1:
+    build: ./telegraf-1
     image: localbuild/telegraf:1.26.3
     depends_on:
-      - influxdb-2
-    container_name: SUES_telegraf2
-    links:
-      - influxdb-2
+      - influxdb-1
+    container_name: SUES_telegraf1
     #restart: unless-stopped
     #environment:
     volumes:
@@ -115,7 +96,7 @@ networks:
 volumes:
   noderedData:
   grafanaData:
-  influxData1:
-  influxData2:
+  influxData1v:
+  influxData1c:
   mosquittoLog:
   mosquittoData:
